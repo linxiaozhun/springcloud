@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://120.78.70.170:9080/config/{application}-config.git #application表示根据不同的项目名指向不同的仓库
+          #search-paths: /config,'{application}'
+          username: linmengzhun  #gitlab仓库账号和密码
+          password: 1234567890
+#  rabbitmq:
+#    host: 192.168.114.129
+#    port: 5672
+#    username: admin
+#    password: admin
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "${EUREKA_URL:http://localhost:8761/eureka}" #连接本地eureka
+  instance:
+    prefer-ip-address: true
+server:
+  port: 7011
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,1 +1,4 @@
 environment: dev
+
+community:
+      id: 1
